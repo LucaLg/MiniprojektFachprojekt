@@ -1,0 +1,16 @@
+Todo:
+
+Bullet Collider ;
+Gegner (Gegner weg wenn draufgeschossen)
+Leben(Herzen) 3 Herzen
+3 GegnerTypen:
+1.Stand Gegner 3 Schusse lauft langsman auf einen zu
+2.Teleport Gegner oder Schnelleren 
+3.Mehr Leben
+
+Loot:
+Herzen
+PowerUp(vllt Dreifachschuss,schussgeschwindigkeit );
+
+
+3 Raume
