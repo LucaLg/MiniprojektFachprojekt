@@ -29,29 +29,12 @@ public class Bullet : MonoBehaviour
                 break;
             case "Gegner":
                 //Enemys take Damage other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
-                
+                GameObject gegner = other.gameObject;
+                float leben = gegner.GetComponent<GegnerContoller>().health -= 1;
                 Destroy(gameObject);
                 break;
         }
 
     }
-   /* void OnTriggerEnter2D(Collider2D other)
-    {
-
-        switch (other.gameObject.tag)
-        {
-
-            case "Wand":
-                
-                Destroy(gameObject);
-                break;
-            case "Gegner":
-                //Enemys take Damage other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
-                GameObject enemy = other.gameObject;
-                Destroy(enemy, 0.2f);
-                Destroy(gameObject);
-                break;
-        }
-
-    }*/
+   
 }
