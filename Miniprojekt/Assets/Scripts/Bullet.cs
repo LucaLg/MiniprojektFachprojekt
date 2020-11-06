@@ -20,21 +20,34 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
        Collider2D other = collision.collider;
-        switch (other.gameObject.tag)
+        if(other.gameObject.tag == "Wand")
         {
-
-            case "Wand":
-
-                Destroy(gameObject);
-                break;
-            case "Gegner":
-                //Enemys take Damage other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
-                GameObject gegner = other.gameObject;
-                float leben = gegner.GetComponent<GegnerContoller>().health -= 1;
-                Destroy(gameObject);
-                break;
+            Destroy(gameObject);
         }
+        //switch (other.gameObject.tag)
+        //{
+            
 
+        //    case "Wand":
+
+        //        Destroy(gameObject);
+        //        break;
+            //case "Gegner":
+            //    //Enemys take Damage other.GameObject.GetComponent<MyEnemyScript>().TakeDamage();
+            //    GameObject gegner = other.gameObject;
+            //    gegner.GetComponent<GegnerController>().health -= 1;
+            //    Destroy(gameObject);
+            //    break;
+        //}
+
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Gegner")
+        {
+            other.gameObject.GetComponent<GegnerController>().health -= 1;
+            Destroy(gameObject);
+        }
     }
    
 }

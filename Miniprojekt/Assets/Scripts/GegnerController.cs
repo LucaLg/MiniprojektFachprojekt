@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GegnerContoller : MonoBehaviour
+public class GegnerController : MonoBehaviour
 {
     public float health;
     public float speed;
@@ -22,13 +22,12 @@ public class GegnerContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerPos.position) > 0.3f)
+        if (Vector2.Distance(transform.position, playerPos.position) > 1.5f)
         {
             //Bewegung
             transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
         }
         RotateTowards(playerPos.position);
-
 
         if (health <= 0)
         {
@@ -37,7 +36,7 @@ public class GegnerContoller : MonoBehaviour
     }
     private void RotateTowards(Vector2 target)
     {
-        var offset = 90f;
+        var offset = -90f;
         Vector2 direction = target - (Vector2)transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
