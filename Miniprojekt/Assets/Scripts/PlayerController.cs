@@ -78,7 +78,8 @@ public class PlayerController : MonoBehaviour
     }
     void Fire()
     {
-        if (waffe1) { 
+        if (waffe1) {
+            Bullet.flugzeit = 0.8f;
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position , firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour
         { 
             //Oben
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet.flugzeit = 0.2f;
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
             //Links
@@ -97,6 +99,7 @@ public class PlayerController : MonoBehaviour
             GameObject bulletRechts = Instantiate(bulletPrefab, firePointRechts.position, firePointRechts.rotation);
             Rigidbody2D rb3 = bulletRechts.GetComponent<Rigidbody2D>();
             rb3.AddForce(firePointRechts.up * bulletForce, ForceMode2D.Impulse);
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D target)

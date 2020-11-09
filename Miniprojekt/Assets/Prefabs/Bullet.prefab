@@ -133,3 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6559b23ec0bb65b4bbbe1233c27502b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flugzeit: 3
