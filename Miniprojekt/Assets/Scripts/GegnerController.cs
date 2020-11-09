@@ -10,7 +10,9 @@ public class GegnerController : MonoBehaviour
     //Loot
     public float lootProbability;
     public GameObject[] loot;
-    
+    public GameObject spieler;
+    private Rigidbody2D rb;
+    private Vector2 movement;
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Spieler").transform;
@@ -19,18 +21,25 @@ public class GegnerController : MonoBehaviour
 
     void Start()
     {
-
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, playerPos.position) > 1.5f)
+        /*if (Vector2.Distance(transform.position, playerPos.position) > 1.5f)
         {
             //Bewegung
-            transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
+            // transform.position = Vector2.MoveTowards(transform.position, playerPos.position, speed * Time.deltaTime);
+            transform.LookAt(playerPos);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(playerPos.position * speed , ForceMode2D.Impulse);
         }
-        RotateTowards(playerPos.position);
+        RotateTowards(playerPos.position);*/
+        Vector3 direction = playerPos.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg -90f;
+        rb.rotation = angle;
+        direction.Normalize();
+        movement = direction;
 
         if (health <= 0)
         {
@@ -51,6 +60,14 @@ public class GegnerController : MonoBehaviour
         
         SpawnLoot();
         Destroy(gameObject);
+    }
+    private void FixedUpdate()
+    {
+        moveEnemy(movement);
+    }
+    void moveEnemy(Vector2 direction)
+    {
+        rb.MovePosition((Vector2) transform.position + (direction * speed * Time.deltaTime));
     }
     void SpawnLoot()
     {

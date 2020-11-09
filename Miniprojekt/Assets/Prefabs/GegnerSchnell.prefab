@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 786538270978881884}
   - component: {fileID: 4866200389517342446}
   - component: {fileID: 1152082768322618710}
-  - component: {fileID: 6161966933288312725}
+  - component: {fileID: -4864949964308009825}
+  - component: {fileID: -1474842490141939322}
   m_Layer: 0
   m_Name: GegnerSchnell
   m_TagString: Gegner
@@ -127,12 +128,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  speed: 6
-  lootProbability: 1
+  speed: 4
+  lootProbability: 0.3
   loot:
   - {fileID: 2367829975924014930, guid: 20881cff8043208479e2e950a4453bd4, type: 3}
   - {fileID: 8586818262383093842, guid: 2d90c673ac1b11949a8b69a968e1d013, type: 3}
---- !u!61 &6161966933288312725
+  spieler: {fileID: 0}
+--- !u!50 &-4864949964308009825
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014435258191976803}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
+--- !u!61 &-1474842490141939322
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
