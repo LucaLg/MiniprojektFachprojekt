@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,12 +14,40 @@ public class PlayerController : MonoBehaviour
     
     public GameObject bulletPrefab;
     public float bulletForce;
-    public int health;
+    public int leben;
+    public int anzahlHerzen;
+    public Image[] herzen;
+    public Sprite leeresHerz;
+    public Sprite vollesHerz;
     Vector2 movement;
     Vector2 mousePos;
     // Update is called once per frame
     void Update()
     {
+        //Herz Update
+        if(leben > anzahlHerzen)
+        {
+            leben = anzahlHerzen;
+        }
+        for (int i = 0; i < herzen.Length; i++)
+        {
+            if (i < leben)
+            {
+                herzen[i].sprite = vollesHerz;
+            }
+            else
+            {
+                herzen[i].sprite = leeresHerz;
+            }
+            if (i < anzahlHerzen)
+            {
+                herzen[i].enabled = true;
+            }
+            else
+            {
+                herzen[i].enabled = false;
+            }
+        }
         //Movement Vector zwischen speichern
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
@@ -51,7 +80,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D target)
     {
         if (target.tag == "Gegner") {
-            health--;
+            leben--;
         }
     }
 }
