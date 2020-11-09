@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     public Transform firePoint;
-    
+
+    private bool unverwundbar = false;
+    private float unverwundbarZeit = 1f;
     public GameObject bulletPrefab;
     public float bulletForce;
     public int leben;
@@ -79,8 +81,20 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D target)
     {
+
         if (target.tag == "Gegner") {
-            leben--;
+            if (!unverwundbar)
+            {
+                leben--;
+                StartCoroutine(Unverwundbarkeit());
+            }
+            
         }
+    }
+    IEnumerator Unverwundbarkeit()
+    {
+        unverwundbar = true;
+        yield return new WaitForSeconds(unverwundbarZeit);
+        unverwundbar = false;
     }
 }
