@@ -7,6 +7,9 @@ public class GegnerController : MonoBehaviour
     public float health;
     public float speed;
     private Transform playerPos;
+    //Loot
+    public float lootProbability;
+    public GameObject[] loot;
     
     void Awake()
     {
@@ -45,6 +48,26 @@ public class GegnerController : MonoBehaviour
 
     void Die()
     {
+        
+        SpawnLoot();
         Destroy(gameObject);
+    }
+    void SpawnLoot()
+    {
+        float randomizer = Random.Range(0f, 1f);
+        
+        if(randomizer <= lootProbability)
+        {
+             if(randomizer < 0.7*lootProbability)
+            { 
+                Instantiate(loot[0], transform.position, Quaternion.identity); 
+            }
+            else if(randomizer >= 0.7 * lootProbability)
+            {
+                Instantiate(loot[1], transform.position, Quaternion.identity);
+            }
+            
+            
+        }
     }
 }

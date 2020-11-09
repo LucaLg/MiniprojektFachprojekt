@@ -128,6 +128,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   speed: 6
+  lootProbability: 1
+  loot:
+  - {fileID: 2367829975924014930, guid: 20881cff8043208479e2e950a4453bd4, type: 3}
+  - {fileID: 8586818262383093842, guid: 2d90c673ac1b11949a8b69a968e1d013, type: 3}
 --- !u!61 &6161966933288312725
 BoxCollider2D:
   m_ObjectHideFlags: 0

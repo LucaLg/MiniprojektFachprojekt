@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
     public Transform firePoint;
-
+    public Transform firePointLinks;
+    public Transform firePointRechts;
+    //Waffen
+    private bool waffe1 = true;
     private bool unverwundbar = false;
     private float unverwundbarZeit = 1f;
     public GameObject bulletPrefab;
@@ -75,9 +78,26 @@ public class PlayerController : MonoBehaviour
     }
     void Fire()
     {
+        if (waffe1) { 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position , firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        }
+        else
+        { 
+            //Oben
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            //Links
+            GameObject bulletLinks = Instantiate(bulletPrefab, firePointLinks.position, firePointLinks.rotation);
+            Rigidbody2D rb2 = bulletLinks.GetComponent<Rigidbody2D>();
+            rb2.AddForce(firePointLinks.up * bulletForce, ForceMode2D.Impulse);
+            //Rechts
+            GameObject bulletRechts = Instantiate(bulletPrefab, firePointRechts.position, firePointRechts.rotation);
+            Rigidbody2D rb3 = bulletRechts.GetComponent<Rigidbody2D>();
+            rb3.AddForce(firePointRechts.up * bulletForce, ForceMode2D.Impulse);
+        }
     }
     private void OnTriggerEnter2D(Collider2D target)
     {
@@ -90,6 +110,16 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+        if(target.tag == "Herz")
+        {
+            leben++;
+            Destroy(target.gameObject);
+        }
+        if(target.tag == "Shotgun")
+        {
+            StartCoroutine( waffenWechsel());
+            Destroy(target.gameObject);
+        }
     }
     IEnumerator Unverwundbarkeit()
     {
@@ -97,4 +127,11 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(unverwundbarZeit);
         unverwundbar = false;
     }
+    IEnumerator waffenWechsel()
+    {
+        waffe1 = false;
+        yield return new WaitForSeconds(3f);
+        waffe1 = true;
+    }
+    
 }
