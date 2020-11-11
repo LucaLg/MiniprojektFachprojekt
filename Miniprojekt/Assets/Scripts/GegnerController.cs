@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GegnerController : MonoBehaviour
 {
+    public float maxHealth;
     public float health;
+    //public HealthbarEnemie healthbar;
     public float speed;
     private Transform playerPos;
     //Loot
@@ -13,6 +16,7 @@ public class GegnerController : MonoBehaviour
     public GameObject spieler;
     private Rigidbody2D rb;
     private Vector2 movement;
+   
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Spieler").transform;
@@ -22,11 +26,15 @@ public class GegnerController : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        health = maxHealth;
+        //healthbar.SetHealth(health, maxHealth);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         /*if (Vector2.Distance(transform.position, playerPos.position) > 1.5f)
         {
             //Bewegung
@@ -87,4 +95,5 @@ public class GegnerController : MonoBehaviour
             
         }
     }
+    
 }
