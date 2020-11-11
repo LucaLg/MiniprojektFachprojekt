@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Pathfinding;
 public class GegnerController : MonoBehaviour
 {
     public float maxHealth;
@@ -16,7 +17,14 @@ public class GegnerController : MonoBehaviour
     public GameObject spieler;
     private Rigidbody2D rb;
     private Vector2 movement;
-   
+
+    //A Star Pathfinding Variablen
+    public float nextWaypointDistance = 3f;
+    Path path;
+    int currentWaypoint = 0;
+    bool reachedEndOfPath = false;
+    Seeker seeker;
+    public Transform target;
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Spieler").transform;
@@ -28,13 +36,31 @@ public class GegnerController : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
         health = maxHealth;
         //healthbar.SetHealth(health, maxHealth);
+        //A Star
+        seeker = GetComponent<Seeker>();
+        InvokeRepeating("UpdatePath", 0f, .5f);
+
         
     }
-
+    void UpdatePath()
+    {
+        if (seeker.IsDone()) { 
+        seeker.StartPath(rb.position, playerPos.position, OnPathComplete);
+        }
+    }
+    void OnPathComplete(Path p)
+    {
+        if (!p.error)
+        {
+            path = p;
+            currentWaypoint = 0;
+        }
+    }
     // Update is called once per frame
     void Update()
     {
        
+        //1.Bewegung ohne Umgebung Interaktion
         /*if (Vector2.Distance(transform.position, playerPos.position) > 1.5f)
         {
             //Bewegung
@@ -54,6 +80,31 @@ public class GegnerController : MonoBehaviour
             Die();
         }
     }
+    private void FixedUpdate()
+    {
+        //A Star
+        if (path == null)
+        {
+            return;
+        }
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            reachedEndOfPath = true;
+
+        }
+        else
+        {
+            reachedEndOfPath = false;
+        }
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 force = direction * speed * Time.deltaTime;
+        rb.AddForce(force);
+        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+        if(distance < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
+    }
     private void RotateTowards(Vector2 target)
     {
         var offset = -90f;
@@ -69,14 +120,16 @@ public class GegnerController : MonoBehaviour
         SpawnLoot();
         Destroy(gameObject);
     }
-    private void FixedUpdate()
+    //Zweite Bewegung ohne Pathfinding
+   /* private void FixedUpdate()
     {
         moveEnemy(movement);
     }
+   
     void moveEnemy(Vector2 direction)
     {
         rb.MovePosition((Vector2) transform.position + (direction * speed * Time.deltaTime));
-    }
+    }*/
     void SpawnLoot()
     {
         float randomizer = Random.Range(0f, 1f);
