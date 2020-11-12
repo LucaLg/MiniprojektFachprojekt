@@ -17,6 +17,8 @@ public class GegnerController : MonoBehaviour
     public GameObject spieler;
     private Rigidbody2D rb;
     private Vector2 movement;
+    public int punkte;
+    public Text punkteText;
 
     //A Star Pathfinding Variablen
     public float nextWaypointDistance = 3f;
@@ -28,7 +30,7 @@ public class GegnerController : MonoBehaviour
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Spieler").transform;
-        
+        punkteText = GameObject.Find("Punkte").GetComponent<Text>();
     }
 
     void Start()
@@ -116,7 +118,8 @@ public class GegnerController : MonoBehaviour
 
     void Die()
     {
-        
+        int neuePunkzahl = System.Int32.Parse(punkteText.text) + punkte;
+        punkteText.text = System.Convert.ToString(neuePunkzahl);
         SpawnLoot();
         Destroy(gameObject);
     }
@@ -132,7 +135,7 @@ public class GegnerController : MonoBehaviour
     }*/
     void SpawnLoot()
     {
-        float randomizer = Random.Range(0f, 1f);
+        float randomizer = UnityEngine.Random.Range(0f, 1f);
         
         if(randomizer <= lootProbability)
         {

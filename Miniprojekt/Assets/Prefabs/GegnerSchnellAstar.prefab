@@ -95,8 +95,8 @@ GameObject:
   - component: {fileID: 6568220141419250683}
   - component: {fileID: 1680461958876745795}
   - component: {fileID: 2653482041132128650}
-  - component: {fileID: 8297733339331157139}
   - component: {fileID: 1778699836862796922}
+  - component: {fileID: -1306459495089373568}
   m_Layer: 0
   m_Name: GegnerSchnellAstar
   m_TagString: Gegner
@@ -185,7 +185,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.15221977}
+  m_Offset: {x: 0, y: 0.35288393}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -196,7 +196,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.05, y: 1.389555}
+  m_Size: {x: 2.05, y: 1.7908833}
   m_EdgeRadius: 0
 --- !u!114 &1680461958876745795
 MonoBehaviour:
@@ -213,11 +213,13 @@ MonoBehaviour:
   maxHealth: 2
   health: 2
   speed: 800
-  lootProbability: 0.3
+  lootProbability: 0.2
   loot:
   - {fileID: 2367829975924014930, guid: 20881cff8043208479e2e950a4453bd4, type: 3}
   - {fileID: 8586818262383093842, guid: 2d90c673ac1b11949a8b69a968e1d013, type: 3}
   spieler: {fileID: 0}
+  punkte: 5
+  punkteText: {fileID: 0}
   nextWaypointDistance: 3
   target: {fileID: 0}
 --- !u!50 &2653482041132128650
@@ -241,32 +243,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &8297733339331157139
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6717660213063330934}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.05, y: 1.42}
-    newSize: {x: 2.05, y: 1.42}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.05, y: 1.42}
-  m_EdgeRadius: 0
 --- !u!114 &1778699836862796922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +271,22 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!58 &-1306459495089373568
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6717660213063330934}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: a6de4a8b79d04f6428eaaaec12954d93, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.02619509, y: 0.24422866}
+  serializedVersion: 2
+  m_Radius: 0.880517
 --- !u!1 &7433499581668239714
 GameObject:
   m_ObjectHideFlags: 0

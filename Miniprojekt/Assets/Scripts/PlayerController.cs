@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Herz Update
+        if(leben <= 0)
+        {
+            Die();
+        }
         if(leben > anzahlHerzen)
         {
             leben = anzahlHerzen;
@@ -113,7 +118,7 @@ public class PlayerController : MonoBehaviour
             }
             
         }
-        if(target.tag == "Herz")
+        if(target.tag == "Herz" && leben != 5)
         {
             leben++;
             Destroy(target.gameObject);
@@ -135,6 +140,11 @@ public class PlayerController : MonoBehaviour
         waffe1 = false;
         yield return new WaitForSeconds(3f);
         waffe1 = true;
+    }
+    void Die()
+    {
+        DataController.SetPunkte(System.Convert.ToInt32(GameObject.Find("Punkte").GetComponent<Text>().text));
+        UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScreen", LoadSceneMode.Single);
     }
     
 }
