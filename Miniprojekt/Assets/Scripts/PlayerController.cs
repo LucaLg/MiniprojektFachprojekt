@@ -70,13 +70,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Fire();
+            
         }
     }
     private void FixedUpdate()
     {
         //Bewegung aktuelle Position + Vector wo wir hin wollen * Geschwindigkeit des Characters
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-       
+        schussAnim.SetBool("Schuss", false);
+
         /*
          * Maus Position - aktuelle Position = Vector von Spieler zur Maus Position
          * Z Roatation Winkel um Character zu drehen Mathf Rad2Deg um Grad der Drehung zu bekommen
@@ -93,8 +95,7 @@ public class PlayerController : MonoBehaviour
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();   
             rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
              erzeugeMuzzleFlash();
-            schussAnim.enabled = true;
-            
+            schussAnim.SetBool("Schuss", true);
         }
         else
         { 
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
             rb3.AddForce(firePointRechts.up * bulletForce, ForceMode2D.Impulse);
             
         }
+        
     }
     private void OnTriggerEnter2D(Collider2D target)
     {
