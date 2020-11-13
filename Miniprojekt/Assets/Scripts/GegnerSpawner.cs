@@ -14,8 +14,8 @@ public class GegnerSpawner : MonoBehaviour
         if (Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
-            xPos = Random.Range(-24f, 6f);
-            yPos = Random.Range(-9f, 15f);
+            xPos = Random.Range(-20f, 6f);
+            yPos = Random.Range(-7f, 13f);
             Instantiate(enemy, new Vector2(xPos, yPos), Quaternion.identity);
 
         }

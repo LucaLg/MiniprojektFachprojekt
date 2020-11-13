@@ -1,0 +1,275 @@
+fileFormatVersion: 2
+guid: 1aac98b5a364f5e48823d8107a454aa4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 292154427124405265
+    second: AmoredSoldier_0
+  - first:
+      213: 5174455643825388432
+    second: AmoredSoldier_1
+  - first:
+      213: -4914121801904956383
+    second: AmoredSoldier_2
+  - first:
+      213: -7587034076437757183
+    second: AmoredSoldier_3
+  - first:
+      213: -4894209063118293537
+    second: AmoredSoldier_4
+  - first:
+      213: 8796389166578233332
+    second: AmoredSoldier_0
+  - first:
+      213: -3113146979198048442
+    second: AmoredSoldier_1
+  - first:
+      213: 5805918783336341319
+    second: AmoredSoldier_5
+  - first:
+      213: 4480284087927609333
+    second: AmoredSoldier_6
+  - first:
+      213: 9221381959560663922
+    second: AmoredSoldier_7
+  - first:
+      213: 7955591226031151340
+    second: AmoredSoldier_8
+  - first:
+      213: 5707492641409664281
+    second: AmoredSoldier_9
+  - first:
+      213: -1018539053019708754
+    second: AmoredSoldier_10
+  - first:
+      213: -3109992375253115566
+    second: AmoredSoldier_11
+  - first:
+      213: -2507504343825716281
+    second: AmoredSoldier_12
+  - first:
+      213: 7857865464702147979
+    second: AmoredSoldier_13
+  - first:
+      213: -8950175703270596254
+    second: AmoredSoldier_14
+  - first:
+      213: -1500487433101559959
+    second: AmoredSoldier_15
+  - first:
+      213: -4419584152596396832
+    second: AmoredSoldier_16
+  - first:
+      213: 6196423809611634192
+    second: AmoredSoldier_17
+  - first:
+      213: -7597207313820477602
+    second: AmoredSoldier_18
+  - first:
+      213: 5332200053045243459
+    second: AmoredSoldier_19
+  - first:
+      213: 1306221550491725072
+    second: AmoredSoldier_20
+  - first:
+      213: 7440907666458787801
+    second: AmoredSoldier_21
+  - first:
+      213: 5400061632366553349
+    second: AmoredSoldier_22
+  - first:
+      213: -5684456913305259979
+    second: AmoredSoldier_23
+  - first:
+      213: -9222929386396026969
+    second: AmoredSoldier_24
+  - first:
+      213: 8999878862620928216
+    second: AmoredSoldier_25
+  - first:
+      213: -4764588788234338398
+    second: AmoredSoldier_26
+  - first:
+      213: 1777990697548691715
+    second: AmoredSoldier_27
+  - first:
+      213: -7967384959305154277
+    second: AmoredSoldier_28
+  - first:
+      213: -1503338814350490689
+    second: AmoredSoldier_29
+  - first:
+      213: -8582660468433721231
+    second: AmoredSoldier_30
+  - first:
+      213: 5692044424382961829
+    second: AmoredSoldier_31
+  - first:
+      213: -7273439713703348867
+    second: AmoredSoldier_32
+  - first:
+      213: 2254606397931886145
+    second: AmoredSoldier_33
+  - first:
+      213: 332227378283462266
+    second: AmoredSoldier_34
+  - first:
+      213: -6917996310335801748
+    second: AmoredSoldier_35
+  - first:
+      213: -7518061302688360936
+    second: AmoredSoldier_36
+  - first:
+      213: -3563051014063931777
+    second: AmoredSoldier_37
+  - first:
+      213: -4703332177977645648
+    second: AmoredSoldier_38
+  - first:
+      213: -4653723669862357180
+    second: AmoredSoldier_39
+  - first:
+      213: -1976029214362549166
+    second: AmoredSoldier_40
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AmoredSoldier_0
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 1109
+        width: 285
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114de4057e0fd0400800000000000000
+      internalID: 292154427124405265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AmoredSoldier_1
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1094
+        width: 304
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b3a3c1efb5fc740800000000000000
+      internalID: 5174455643825388432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

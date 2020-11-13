@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     public Sprite vollesHerz;
     Vector2 movement;
     Vector2 mousePos;
+    //MuzzleFlash
+    public ParticleSystem flash;
+    //Schuss Animation
+    public Animator schussAnim;
     // Update is called once per frame
     void Update()
     {
@@ -85,9 +89,12 @@ public class PlayerController : MonoBehaviour
     {
         if (waffe1) {
             Bullet.flugzeit = 0.8f;
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position , firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position , firePoint.rotation);
+            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();   
+            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+             erzeugeMuzzleFlash();
+            schussAnim.enabled = true;
+            
         }
         else
         { 
@@ -145,6 +152,10 @@ public class PlayerController : MonoBehaviour
     {
         DataController.SetPunkte(System.Convert.ToInt32(GameObject.Find("Punkte").GetComponent<Text>().text));
         UnityEngine.SceneManagement.SceneManager.LoadScene("DeathScreen", LoadSceneMode.Single);
+    }
+    private void erzeugeMuzzleFlash()
+    {
+        flash.Emit(30);
     }
     
 }
