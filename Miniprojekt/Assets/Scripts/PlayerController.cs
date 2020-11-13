@@ -31,6 +31,12 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem flash;
     //Schuss Animation
     public Animator schussAnim;
+    //Waffen Sprite wechssel
+    public Sprite shotgunSprite;
+    public SpriteRenderer waffenSprite;
+    public Sprite standartSprite;
+    //3.Waffe Rapid Fire
+    private bool waffe3 = false;
     // Update is called once per frame
     void Update()
     {
@@ -67,11 +73,15 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         // Mouse Position zum Zielen zwischenspeichern
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Fire();
-            
+       
+            if (Input.GetButtonDown("Fire1"))
+            {
+            if (!waffe3) { 
+                Fire();
+            }
+
         }
+        
     }
     private void FixedUpdate()
     {
@@ -99,6 +109,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         { 
+            
             //Oben
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Bullet.flugzeit = 0.2f;
@@ -112,7 +123,9 @@ public class PlayerController : MonoBehaviour
             GameObject bulletRechts = Instantiate(bulletPrefab, firePointRechts.position, firePointRechts.rotation);
             Rigidbody2D rb3 = bulletRechts.GetComponent<Rigidbody2D>();
             rb3.AddForce(firePointRechts.up * bulletForce, ForceMode2D.Impulse);
-            
+            erzeugeMuzzleFlash();
+            schussAnim.SetBool("Schuss", true);
+
         }
         
     }
@@ -134,6 +147,7 @@ public class PlayerController : MonoBehaviour
         }
         if(target.tag == "Shotgun")
         {
+            
             StartCoroutine( waffenWechsel());
             Destroy(target.gameObject);
         }
@@ -147,8 +161,10 @@ public class PlayerController : MonoBehaviour
     IEnumerator waffenWechsel()
     {
         waffe1 = false;
-        yield return new WaitForSeconds(3f);
+        waffenSprite.sprite = shotgunSprite;
+        yield return new WaitForSeconds(5f);
         waffe1 = true;
+        waffenSprite.sprite = standartSprite;
     }
     void Die()
     {
