@@ -151,6 +151,7 @@ public class PlayerController : MonoBehaviour
             StartCoroutine( waffenWechsel());
             Destroy(target.gameObject);
         }
+        
     }
     IEnumerator Unverwundbarkeit()
     {

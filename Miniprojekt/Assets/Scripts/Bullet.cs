@@ -50,6 +50,11 @@ public class Bullet : MonoBehaviour
             other.gameObject.GetComponent<GegnerController>().health -= 1;
             Destroy(gameObject);
         }
+        if(other.tag == "BossGegner")
+        {
+            other.gameObject.GetComponent<BossController>().leben -= 1;
+            Destroy(gameObject);
+        }
     }
     
 }
