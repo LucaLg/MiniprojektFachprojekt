@@ -29,6 +29,7 @@ public class BossBullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+      
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,5 +41,5 @@ public class BossBullet : MonoBehaviour
         }
 
     }
-
+    
 }
