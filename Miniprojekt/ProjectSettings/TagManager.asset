@@ -9,6 +9,7 @@ TagManager:
   - Spieler
   - Herz
   - Shotgun
+  - BossGegner
   layers:
   - Default
   - TransparentFX
