@@ -103,4 +103,8 @@ public class BossController : MonoBehaviour
         punkteText.text = System.Convert.ToString(neuePunkzahl);
         Destroy(gameObject);
     }
+    public int getLeben()
+    {
+        return leben;
+    }
 }

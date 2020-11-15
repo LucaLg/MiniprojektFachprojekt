@@ -6359,12 +6359,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7755e7095df25f5449365cf4f23f733c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 6717660213063330934, guid: 31f7a303ca5a81d4d91e331f1ec31d5c, type: 3}
+  enemy: {fileID: 5306999349561809523, guid: a91e29d3c888d5847bbaedea719ca1aa, type: 3}
   xPos: 0
   yPos: 0
   spawnRate: 2
-  normalGegnerAnzahl: 10
-  boss: {fileID: 84879776020945812, guid: f32365b1f574db64d996f4b327f870b1, type: 3}
+  normalGegnerAnzahl: 2
+  boss: {fileID: 3279770899837675635, guid: 2c8a68ba782788a489b178c9e42b9d82, type: 3}
 --- !u!4 &1046178549
 Transform:
   m_ObjectHideFlags: 0

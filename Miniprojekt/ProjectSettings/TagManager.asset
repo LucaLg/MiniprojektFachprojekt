@@ -10,6 +10,7 @@ TagManager:
   - Herz
   - Shotgun
   - BossGegner
+  - Canvas
   layers:
   - Default
   - TransparentFX

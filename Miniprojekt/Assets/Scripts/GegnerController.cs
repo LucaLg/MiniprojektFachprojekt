@@ -6,8 +6,8 @@ using UnityEngine.UI;
 using Pathfinding;
 public class GegnerController : MonoBehaviour
 {
-    public float maxHealth;
-    public float health;
+    public int maxHealth;
+    public int health;
     //public HealthbarEnemie healthbar;
     public float speed;
     private Transform playerPos;
@@ -151,5 +151,8 @@ public class GegnerController : MonoBehaviour
             
         }
     }
-    
+    public int getHealth()
+    {
+        return health;
+    }
 }
