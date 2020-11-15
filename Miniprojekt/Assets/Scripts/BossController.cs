@@ -59,6 +59,7 @@ public class BossController : MonoBehaviour
             {
                 this.GetComponent<Animator>().SetTrigger("Attack");
                 Instantiate(gegnerBullet, transform.position, Quaternion.identity);
+                
                 timeBetweenShoots = startTimeBtShoots;
             }
             else
@@ -68,11 +69,12 @@ public class BossController : MonoBehaviour
         }
         else if (leben >= 20) //Phase 2
         {
-            startTimeBtShoots = 1;
+            startTimeBtShoots = 0.7f;
             if (timeBetweenShoots <= 0)
             {
                 this.GetComponent<Animator>().SetTrigger("Attack");
                 Instantiate(gegnerBullet, transform.position, Quaternion.identity);
+                gegnerBullet.GetComponent<BossBullet>().speed = 60;
                 timeBetweenShoots = startTimeBtShoots;
             }
             else
@@ -82,12 +84,12 @@ public class BossController : MonoBehaviour
         }
         else //Phase 3
         {
-            startTimeBtShoots = 0.2f;
+            startTimeBtShoots = 0.5f;
             if (timeBetweenShoots <= 0)
             {
                 this.GetComponent<Animator>().SetTrigger("Attack");
                 Instantiate(gegnerBullet, transform.position, Quaternion.identity);
-                this.GetComponent<BossBullet>().speed = 60;
+               
                 timeBetweenShoots = startTimeBtShoots;
             }
             else

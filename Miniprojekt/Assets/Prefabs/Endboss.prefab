@@ -274,7 +274,7 @@ MonoBehaviour:
   startTimeBtShoots: 2
   gegnerBullet: {fileID: 5979386672440963560, guid: d33be4b34fcf6cc4ea837f25ddd7e64e,
     type: 3}
-  leben: 50
+  leben: 35
 --- !u!50 &1771236469591541581
 Rigidbody2D:
   serializedVersion: 4
