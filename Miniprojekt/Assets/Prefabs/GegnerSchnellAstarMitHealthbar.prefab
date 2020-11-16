@@ -222,6 +222,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3135546596624461498, guid: 90c93a1a8dc65e14aa525876da917355,
         type: 3}
+    - target: {fileID: 1680461958876745795, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
+        type: 3}
+      propertyPath: maxHealth
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1680461958876745795, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
+        type: 3}
+      propertyPath: health
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4731066923445937687, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
         type: 3}
       propertyPath: m_AnchoredPosition.x

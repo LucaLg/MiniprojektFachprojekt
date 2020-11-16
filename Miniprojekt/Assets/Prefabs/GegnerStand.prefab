@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5064589864665804433}
   - component: {fileID: 5064589864665804432}
   - component: {fileID: 8504495618897711734}
+  - component: {fileID: -425511187478004347}
   m_Layer: 0
   m_Name: GegnerStand
   m_TagString: Gegner
@@ -73,8 +74,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c1d6f8e9feaf04d9e2aed37854bb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  speed: 2
+  maxHealth: 4
+  health: 4
+  speed: 500
+  lootProbability: 0.1
+  loot:
+  - {fileID: 2367829975924014930, guid: 20881cff8043208479e2e950a4453bd4, type: 3}
+  - {fileID: 8586818262383093842, guid: 2d90c673ac1b11949a8b69a968e1d013, type: 3}
+  spieler: {fileID: 0}
+  punkte: 2
+  punkteText: {fileID: 0}
+  nextWaypointDistance: 3
+  target: {fileID: 0}
+  blut: {fileID: 0}
+--- !u!114 &-425511187478004347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064589864665804435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &5064589864728314399
 GameObject:
   m_ObjectHideFlags: 0

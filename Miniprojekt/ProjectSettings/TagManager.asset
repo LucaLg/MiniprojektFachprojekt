@@ -12,6 +12,7 @@ TagManager:
   - BossGegner
   - Canvas
   - Door
+  - Fallen
   layers:
   - Default
   - TransparentFX
