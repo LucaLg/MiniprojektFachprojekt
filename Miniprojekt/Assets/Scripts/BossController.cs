@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -104,6 +105,7 @@ public class BossController : MonoBehaviour
         int neuePunkzahl = System.Int32.Parse(punkteText.text) + 100;
         punkteText.text = System.Convert.ToString(neuePunkzahl);
         Destroy(gameObject);
+        SceneManager.LoadScene("WinScreen", LoadSceneMode.Single);
     }
     public int getLeben()
     {
