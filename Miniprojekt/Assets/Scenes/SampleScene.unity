@@ -6363,7 +6363,7 @@ MonoBehaviour:
   xPos: 0
   yPos: 0
   spawnRate: 2
-  normalGegnerAnzahl: 2
+  normalGegnerAnzahl: 5
   boss: {fileID: 3279770899837675635, guid: 2c8a68ba782788a489b178c9e42b9d82, type: 3}
 --- !u!4 &1046178549
 Transform:

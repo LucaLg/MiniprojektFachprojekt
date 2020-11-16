@@ -27,6 +27,8 @@ public class GegnerController : MonoBehaviour
     bool reachedEndOfPath = false;
     Seeker seeker;
     public Transform target;
+    //Blut Effekt
+    public GameObject blut;
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Spieler").transform;
@@ -121,7 +123,10 @@ public class GegnerController : MonoBehaviour
         int neuePunkzahl = System.Int32.Parse(punkteText.text) + punkte;
         punkteText.text = System.Convert.ToString(neuePunkzahl);
         SpawnLoot();
+        Instantiate(blut, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        Destroy(blut);
+
     }
     //Zweite Bewegung ohne Pathfinding
    /* private void FixedUpdate()
