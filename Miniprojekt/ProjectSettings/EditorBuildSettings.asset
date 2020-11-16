@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScreen.unity
     guid: 35397d8b5cffdaf4bbd5c462f74d0b74
+  - enabled: 1
+    path: Assets/Scenes/BossRaum.unity
+    guid: 7ba448316e4b7f444b65b8963c83956a
   m_configObjects: {}
