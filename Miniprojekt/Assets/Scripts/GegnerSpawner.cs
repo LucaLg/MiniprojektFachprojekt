@@ -28,8 +28,8 @@ public class GegnerSpawner : MonoBehaviour
             yPos = System.Convert.ToInt32(Random.Range(-8f, 10f));
             TileBase spawnTile = umgebung.GetTile(new Vector3Int(xPos, yPos, 0));
              while(spawnTile != null) {
-                xPos = rerollX();
-                yPos = rerollY();
+                xPos = Reroll(-20f,4f);
+                yPos = Reroll(-8f,10f);
                 spawnTile = umgebung.GetTile(new Vector3Int(xPos, yPos, 0));
             }
             if (standard)
@@ -58,12 +58,8 @@ public class GegnerSpawner : MonoBehaviour
             door.SetActive(true);
         }
     }
-    int rerollX()
+    int Reroll(float range1,float range2)
     {
-        return System.Convert.ToInt32(Random.Range(-20f, 4f)); 
-    }
-    int rerollY()
-    {
-        return System.Convert.ToInt32(Random.Range(-8f, 10f));
+        return System.Convert.ToInt32(Random.Range(range1,range2));
     }
 }

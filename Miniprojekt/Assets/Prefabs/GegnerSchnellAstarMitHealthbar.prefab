@@ -232,6 +232,11 @@ PrefabInstance:
       propertyPath: health
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1680461958876745795, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
+        type: 3}
+      propertyPath: lootProbability
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4731066923445937687, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
