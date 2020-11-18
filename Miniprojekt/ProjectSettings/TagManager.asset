@@ -13,6 +13,7 @@ TagManager:
   - Canvas
   - Door
   - Fallen
+  - Munition
   layers:
   - Default
   - TransparentFX

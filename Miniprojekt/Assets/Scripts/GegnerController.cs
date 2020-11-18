@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Pathfinding;
 public class GegnerController : MonoBehaviour
 {
+    private bool heart = false;
     public int maxHealth;
     public int health;
     //public HealthbarEnemie healthbar;
@@ -145,14 +146,21 @@ public class GegnerController : MonoBehaviour
         if(randomizer <= lootProbability)
         {
              if(randomizer < 0.7*lootProbability)
-            { 
-                Instantiate(loot[0], transform.position, Quaternion.identity); 
+            {
+                if (randomizer>0.3) { 
+                    Instantiate(loot[0], transform.position, Quaternion.identity);
+                    
+                }
+                else
+                {
+                    Instantiate(loot[2], transform.position, Quaternion.identity);
+                  
+                }
             }
             else if(randomizer >= 0.7 * lootProbability)
             {
                 Instantiate(loot[1], transform.position, Quaternion.identity);
             }
-            
             
         }
     }

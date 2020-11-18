@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
     public float moveSpeed;
+    public int munition;
     public Rigidbody2D rb;
     public Camera cam;
     public Transform firePoint;
@@ -38,13 +39,14 @@ public class PlayerController : MonoBehaviour
     //3.Waffe Rapid Fire
     private bool waffe3 = false;
     // Update is called once per frame
-
+    public Text munitionText;
     private void Awake()
     {
         cam = Camera.main;
     }
     void Update()
     {
+        munitionText.text = munition.ToString();
         //Herz Update
         if(leben <= 0)
         {
@@ -81,8 +83,9 @@ public class PlayerController : MonoBehaviour
        
             if (Input.GetButtonDown("Fire1"))
             {
-            if (!waffe3) { 
+            if (munition>0) { 
                 Fire();
+                munition--;
             }
 
         }
@@ -154,6 +157,11 @@ public class PlayerController : MonoBehaviour
         {
             
             StartCoroutine( waffenWechsel());
+            Destroy(target.gameObject);
+        }
+        if(target.tag == "Munition")
+        {
+            munition += 20;
             Destroy(target.gameObject);
         }
         
