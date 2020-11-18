@@ -237,6 +237,16 @@ PrefabInstance:
       propertyPath: lootProbability
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2653482041132128650, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2653482041132128650, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
+        type: 3}
+      propertyPath: m_LinearDrag
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4731066923445937687, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
         type: 3}
       propertyPath: m_AnchoredPosition.x

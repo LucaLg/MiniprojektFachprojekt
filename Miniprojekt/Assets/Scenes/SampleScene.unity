@@ -6590,6 +6590,7 @@ MonoBehaviour:
   tile: {fileID: 11400000, guid: 96c66d44acc003c418b501305935b804, type: 2}
   door: {fileID: 1525716224}
   umgebung: {fileID: 196662025}
+  player: {fileID: 770337885}
 --- !u!4 &1046178549
 Transform:
   m_ObjectHideFlags: 0

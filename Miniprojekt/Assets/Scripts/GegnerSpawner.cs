@@ -15,6 +15,7 @@ public class GegnerSpawner : MonoBehaviour
     public GameObject door;
     public Tilemap umgebung;
     private bool standard=true;
+    public GameObject player;
     void Update()
     {
         if(GegnerAnzahl <= 10)
@@ -27,11 +28,12 @@ public class GegnerSpawner : MonoBehaviour
             xPos = System.Convert.ToInt32(Random.Range(-20f, 4f));
             yPos = System.Convert.ToInt32(Random.Range(-8f, 10f));
             TileBase spawnTile = umgebung.GetTile(new Vector3Int(xPos, yPos, 0));
-             while(spawnTile != null) {
+            
+             while(spawnTile != null || Vector3.Distance(player.transform.position, new Vector3(xPos, yPos))<10) {
                 xPos = Reroll(-20f,4f);
                 yPos = Reroll(-8f,10f);
                 spawnTile = umgebung.GetTile(new Vector3Int(xPos, yPos, 0));
-            }
+                }
             if (standard)
             {
                 Instantiate(enemyStandard, new Vector2(xPos, yPos), Quaternion.identity);

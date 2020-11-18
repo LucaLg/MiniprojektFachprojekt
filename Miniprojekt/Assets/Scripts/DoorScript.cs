@@ -11,13 +11,10 @@ public class DoorScript : MonoBehaviour
     {
         if(collision.tag == "Spieler")
         {
-
-
             Vector3 neuerPlayerPos = new Vector3(-4, 42, 0);
             player.transform.position = neuerPlayerPos;
             Camera.main.transform.position = new Vector3(-4, 50, -10);
-            Instantiate(bossGegner, new Vector3(-4, 50, 0), Quaternion.identity);
-          
+            Instantiate(bossGegner, new Vector3(-4, 50, 0), Quaternion.identity); 
         }
     }
   
