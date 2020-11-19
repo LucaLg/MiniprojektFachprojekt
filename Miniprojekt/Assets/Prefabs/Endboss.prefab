@@ -271,10 +271,12 @@ MonoBehaviour:
   stoppingDistance: 10
   retreatDistance: 5
   player: {fileID: 0}
-  startTimeBtShoots: 2
+  startTimeBtShoots: 1
   gegnerBullet: {fileID: 5979386672440963560, guid: d33be4b34fcf6cc4ea837f25ddd7e64e,
     type: 3}
   leben: 50
+  xBoundLeft: -20
+  xBoundRight: 4
 --- !u!50 &1771236469591541581
 Rigidbody2D:
   serializedVersion: 4

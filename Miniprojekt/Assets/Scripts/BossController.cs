@@ -15,7 +15,9 @@ public class BossController : MonoBehaviour
     public GameObject gegnerBullet;
     public int leben;
     private Rigidbody2D rb;
-
+    public float xBoundLeft;
+    public float xBoundRight;
+    private bool moveRight;
     // Punkte
     private Text punkteText;
     // Start is called before the first frame update
@@ -43,19 +45,46 @@ public class BossController : MonoBehaviour
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = angle;
-        //Bewegung
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, bossSpeed * Time.deltaTime);
-        }else if(Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-        }else if(Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -bossSpeed * Time.deltaTime);
+        
+        //Neue Bewegung Geh rechts nach Links ab Movment Phase 1 und 3
+        if(leben > 35 || leben < 20) { 
+            Vector3 xBoundsRight = new Vector3(xBoundRight, 10, 0);
+            Vector3 xBoundsLeft = new Vector3(xBoundLeft, 10, 0);
+            if (transform.position.x <= xBoundLeft )
+            {
+                moveRight = true;
+            
+            }
+            if(transform.position.x >= xBoundRight)
+            {
+                moveRight = false;
+            }
+            if (moveRight)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, xBoundsRight, bossSpeed * Time.deltaTime);
+            }else if (!moveRight)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, xBoundsLeft, bossSpeed * Time.deltaTime);
+            }
+        }
+        //Movement Phase 2
+        //Bewegung Alt
+        if(leben <=35 && leben >= 20) { 
+            if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, bossSpeed * Time.deltaTime);
+            }
+            else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+            {
+                transform.position = this.transform.position;
+            }
+            else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, -bossSpeed * Time.deltaTime);
+            }
         }
         //Schiessen Phase1;
-        if(leben >= 35) { 
+        if (leben >= 35) { 
             if(timeBetweenShoots <= 0)
             {
                 this.GetComponent<Animator>().SetTrigger("Attack");
@@ -71,6 +100,7 @@ public class BossController : MonoBehaviour
         else if (leben >= 20) //Phase 2
         {
             startTimeBtShoots = 0.7f;
+            bossSpeed = 8f;
             if (timeBetweenShoots <= 0)
             {
                 this.GetComponent<Animator>().SetTrigger("Attack");
@@ -85,7 +115,8 @@ public class BossController : MonoBehaviour
         }
         else //Phase 3
         {
-            startTimeBtShoots = 0.5f;
+            startTimeBtShoots = 0.3f;
+            bossSpeed = 10f;
             if (timeBetweenShoots <= 0)
             {
                 this.GetComponent<Animator>().SetTrigger("Attack");
