@@ -14,6 +14,7 @@ TagManager:
   - Door
   - Fallen
   - Munition
+  - SpielerUI
   layers:
   - Default
   - TransparentFX

@@ -38,8 +38,10 @@ public class PlayerController : MonoBehaviour
     public Sprite standartSprite;
     //3.Waffe Rapid Fire
     private bool waffe3 = false;
-    // Update is called once per frame
+    // Munitions TextFeld
     public Text munitionText;
+    //Spawn Position nach Tuer 0=Unten , 1=Links ,2=Rechts , 3=Oben
+    public string spawnPosition = "mitte";
     private void Awake()
     {
         cam = Camera.main;

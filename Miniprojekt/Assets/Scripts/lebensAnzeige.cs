@@ -43,6 +43,6 @@ public class lebensAnzeige : MonoBehaviour
             leben = bossGegner.GetComponentInChildren<GegnerController>().getHealth();
         }
         lebensfeld.text = leben.ToString() + "/" + startLeben.ToString();
-        transform.position = new Vector2(bossGegner.transform.position.x,bossGegner.transform.position.y +2.5f);
+        transform.position = new Vector2(bossGegner.transform.position.x,bossGegner.transform.position.y +1f);
     }
 }
