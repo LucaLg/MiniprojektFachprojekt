@@ -46,7 +46,7 @@ public class GegnerSpawner : MonoBehaviour
             GegnerAnzahl = GegnerAnzahl - 1;
 
         }
-        else if (GegnerAnzahl==0)
+        else if (player.GetComponent<PlayerController>().enemysToKill==0)
         {
             //Spawn Door
             Vector3Int vec1 = new Vector3Int(-8, 12, 0);

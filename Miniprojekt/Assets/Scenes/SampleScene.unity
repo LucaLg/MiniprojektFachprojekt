@@ -6731,7 +6731,7 @@ MonoBehaviour:
   xPos: 0
   yPos: 0
   spawnRate: 2
-  GegnerAnzahl: 0
+  GegnerAnzahl: 5
   wand: {fileID: 1698348295}
   tile: {fileID: 11400000, guid: 96c66d44acc003c418b501305935b804, type: 2}
   door: {fileID: 1525716224}

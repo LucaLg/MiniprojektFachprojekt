@@ -30,10 +30,13 @@ public class GegnerController : MonoBehaviour
     public Transform target;
     //Blut Effekt
     public GameObject blut;
+    //Spieler fuer EnemysToKill
+    private GameObject player;
     void Awake()
     {
         playerPos = GameObject.FindGameObjectWithTag("Spieler").transform;
         punkteText = GameObject.Find("Punkte").GetComponent<Text>();
+        player = GameObject.FindGameObjectWithTag("Spieler");
     }
 
     void Start()
@@ -121,12 +124,13 @@ public class GegnerController : MonoBehaviour
 
     void Die()
     {
+        player.GetComponent<PlayerController>().enemysToKill--;
         int neuePunkzahl = System.Int32.Parse(punkteText.text) + punkte;
         punkteText.text = System.Convert.ToString(neuePunkzahl);
         SpawnLoot();
-        Instantiate(blut, transform.position, Quaternion.identity);
+       // Instantiate(blut, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        Destroy(blut);
+        //Destroy(blut);
 
     }
     //Zweite Bewegung ohne Pathfinding

@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public Text munitionText;
     //Spawn Position nach Tuer 0=Unten , 1=Links ,2=Rechts , 3=Oben
     public string spawnPosition = "mitte";
+    //Enemys To kill = 0 --> offnen des BossRaums
+    public int enemysToKill;
     private void Awake()
     {
         cam = Camera.main;
