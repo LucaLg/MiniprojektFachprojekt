@@ -255,7 +255,7 @@ PrefabInstance:
     - target: {fileID: 1680461958876745795, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
         type: 3}
       propertyPath: lootProbability
-      value: 1
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1680461958876745795, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
         type: 3}
@@ -263,6 +263,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8506224480669882489, guid: d59fe28bb59a8de47af99111140ad228,
         type: 3}
+    - target: {fileID: 1680461958876745795, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
+        type: 3}
+      propertyPath: speed
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 2653482041132128650, guid: 31f7a303ca5a81d4d91e331f1ec31d5c,
         type: 3}
       propertyPath: m_Mass

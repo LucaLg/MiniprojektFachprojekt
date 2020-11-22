@@ -16,6 +16,10 @@ public class GegnerSpawner : MonoBehaviour
     public Tilemap umgebung;
     private bool standard=true;
     public GameObject player;
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Spieler");
+    }
     void Update()
     {
         if(GegnerAnzahl <= 10)

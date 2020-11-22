@@ -8473,7 +8473,7 @@ MonoBehaviour:
     type: 3}
   xPos: 0
   yPos: 0
-  spawnRate: 2
+  spawnRate: 1
   GegnerAnzahl: 20
   wand: {fileID: 117901546}
   tile: {fileID: 11400000, guid: 96c66d44acc003c418b501305935b804, type: 2}
