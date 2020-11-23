@@ -44,9 +44,14 @@ public class PlayerController : MonoBehaviour
     public string spawnPosition = "mitte";
     //Enemys To kill = 0 --> offnen des BossRaums
     public int enemysToKill;
+    public Text enemysToKillText;
+    public Image enemyImage;
     private void Awake()
     {
         cam = Camera.main;
+        GameObject PlayerUIGameObject = GameObject.FindGameObjectWithTag("SpielerUI");
+        Canvas PlayerUI = PlayerUIGameObject.GetComponent<Canvas>();
+        
     }
     void Update()
     {
@@ -93,7 +98,14 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        
+        //Update EnemysToKill TextFeld
+        if (enemysToKill > 0) { 
+        enemysToKillText.text = enemysToKill.ToString();
+        }else
+        {
+            
+            enemysToKillText.text = "Boss Raum offen";
+                }
     }
     private void FixedUpdate()
     {

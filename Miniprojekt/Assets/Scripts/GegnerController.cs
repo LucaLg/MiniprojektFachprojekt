@@ -104,13 +104,15 @@ public class GegnerController : MonoBehaviour
         {
             reachedEndOfPath = false;
         }
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
-        rb.AddForce(force);
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-        if(distance < nextWaypointDistance)
-        {
-            currentWaypoint++;
+        if (!reachedEndOfPath) { 
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            Vector2 force = direction * speed * Time.deltaTime;
+            rb.AddForce(force);
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            if(distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
         }
     }
     private void RotateTowards(Vector2 target)
@@ -151,7 +153,7 @@ public class GegnerController : MonoBehaviour
         {
              if(randomizer < 0.7*lootProbability)
             {
-                if (randomizer>0.3) { 
+                if (randomizer>0.2) { 
                     Instantiate(loot[0], transform.position, Quaternion.identity);
                     
                 }

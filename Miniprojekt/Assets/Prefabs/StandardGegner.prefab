@@ -418,7 +418,7 @@ MonoBehaviour:
   maxHealth: 2
   health: 2
   speed: 700
-  lootProbability: 0.4
+  lootProbability: 0.2
   loot:
   - {fileID: 2367829975924014930, guid: 20881cff8043208479e2e950a4453bd4, type: 3}
   - {fileID: 8586818262383093842, guid: 2d90c673ac1b11949a8b69a968e1d013, type: 3}

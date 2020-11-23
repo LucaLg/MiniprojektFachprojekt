@@ -8474,7 +8474,7 @@ MonoBehaviour:
   xPos: 0
   yPos: 0
   spawnRate: 1
-  GegnerAnzahl: 20
+  GegnerAnzahl: 10
   wand: {fileID: 117901546}
   tile: {fileID: 11400000, guid: 96c66d44acc003c418b501305935b804, type: 2}
   door: {fileID: 0}
