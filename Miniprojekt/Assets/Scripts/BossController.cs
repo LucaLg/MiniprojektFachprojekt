@@ -136,6 +136,7 @@ public class BossController : MonoBehaviour
         int neuePunkzahl = System.Int32.Parse(punkteText.text) + 100;
         punkteText.text = System.Convert.ToString(neuePunkzahl);
         Destroy(gameObject);
+        DataController.SetPunkte(System.Convert.ToInt32(GameObject.Find("Punkte").GetComponent<Text>().text));
         SceneManager.LoadScene("WinScreen", LoadSceneMode.Single);
     }
     public int getLeben()

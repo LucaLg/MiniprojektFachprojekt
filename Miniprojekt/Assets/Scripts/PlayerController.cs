@@ -46,6 +46,10 @@ public class PlayerController : MonoBehaviour
     public int enemysToKill;
     public Text enemysToKillText;
     public Image enemyImage;
+    public bool sampleCleard = false;
+    public bool Raum1Cleard =false;
+    public bool Raum2Cleard = false;
+    public bool Raum3Cleard =false;
     private void Awake()
     {
         cam = Camera.main;

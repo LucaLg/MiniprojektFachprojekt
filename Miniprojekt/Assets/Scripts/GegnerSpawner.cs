@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 public class GegnerSpawner : MonoBehaviour
 {
     public GameObject enemySchnell;
@@ -19,9 +20,45 @@ public class GegnerSpawner : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Spieler");
+        
+        if(SceneManager.GetActiveScene().name == "SampleScene" && player.GetComponent<PlayerController>().sampleCleard)
+        {
+            GegnerAnzahl = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Raum1" && player.GetComponent<PlayerController>().Raum1Cleard)
+        {
+            GegnerAnzahl = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Raum2" && player.GetComponent<PlayerController>().Raum2Cleard)
+        {
+            GegnerAnzahl = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Raum3" && player.GetComponent<PlayerController>().Raum3Cleard)
+        {
+            GegnerAnzahl = 0;
+        }
     }
     void Update()
     {
+        if(GegnerAnzahl == 0)
+        {
+            string name = SceneManager.GetActiveScene().name;
+            switch (name)
+            {
+                case "SampleScene":
+                    player.GetComponent<PlayerController>().sampleCleard = true;
+                    break;
+                case "Raum1":
+                    player.GetComponent<PlayerController>().Raum1Cleard = true;
+                    break;
+                case "Raum2":
+                    player.GetComponent<PlayerController>().Raum2Cleard = true;
+                    break;
+                case "Raum3":
+                    player.GetComponent<PlayerController>().Raum3Cleard = true;
+                    break;
+            }
+        }
         if(GegnerAnzahl <= 10)
         {
             spawnRate = 0.5f;
@@ -50,7 +87,7 @@ public class GegnerSpawner : MonoBehaviour
             GegnerAnzahl = GegnerAnzahl - 1;
 
         }
-        else if (player.GetComponent<PlayerController>().enemysToKill==0)
+        if (player.GetComponent<PlayerController>().enemysToKill<=0)
         {
             //Spawn Door
             Vector3Int vec1 = new Vector3Int(-8, 12, 0);

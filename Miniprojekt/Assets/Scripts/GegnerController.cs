@@ -29,7 +29,7 @@ public class GegnerController : MonoBehaviour
     Seeker seeker;
     public Transform target;
     //Blut Effekt
-    public GameObject blut;
+    public ParticleSystem blut;
     //Spieler fuer EnemysToKill
     private GameObject player;
     void Awake()
@@ -130,7 +130,8 @@ public class GegnerController : MonoBehaviour
         int neuePunkzahl = System.Int32.Parse(punkteText.text) + punkte;
         punkteText.text = System.Convert.ToString(neuePunkzahl);
         SpawnLoot();
-       // Instantiate(blut, transform.position, Quaternion.identity);
+       
+        //Instantiate(blut, transform.position, Quaternion.identity);
         Destroy(gameObject);
         //Destroy(blut);
 
@@ -148,12 +149,13 @@ public class GegnerController : MonoBehaviour
     void SpawnLoot()
     {
         float randomizer = UnityEngine.Random.Range(0f, 1f);
+        float heartOrMunRandom = UnityEngine.Random.value;
         
         if(randomizer <= lootProbability)
         {
              if(randomizer < 0.7*lootProbability)
             {
-                if (randomizer>0.2) { 
+                if (heartOrMunRandom > 0.3) { 
                     Instantiate(loot[0], transform.position, Quaternion.identity);
                     
                 }

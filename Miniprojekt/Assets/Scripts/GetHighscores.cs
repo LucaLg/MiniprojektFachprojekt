@@ -7,6 +7,7 @@ public class GetHighscores : MonoBehaviour
 {
    
     public Text textErster, textZweiter, textDritter;
+    
     void Start()
     {
         textErster.text = "1. " + PlayerPrefs.GetString("HighscoreErsterName", "-") + "\t" + System.Convert.ToString(PlayerPrefs.GetInt("HighscoreErsterPunkte", 0));

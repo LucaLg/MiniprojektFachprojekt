@@ -10,7 +10,6 @@ public class SpawnController : MonoBehaviour
     {
         //Duplikate Loeschen Spieler
         int anzahl = GameObject.FindGameObjectsWithTag("Spieler").Length;
-        Debug.Log(anzahl.ToString());
         if (anzahl > 1)
         {
             Destroy(GameObject.FindGameObjectsWithTag("Spieler")[1]);

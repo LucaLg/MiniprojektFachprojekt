@@ -17,12 +17,9 @@ public class DoorScript : MonoBehaviour
             player.GetComponent<PlayerController>().spawnPosition = position;
             GameObject ui = GameObject.Find("PlayerUIGameObject");
             Camera cam = Camera.main;
-           
-                DontDestroyOnLoad(player);
-                DontDestroyOnLoad(ui);
-                DontDestroyOnLoad(cam);
-            
-
+            DontDestroyOnLoad(player);
+            DontDestroyOnLoad(ui);
+            DontDestroyOnLoad(cam);
             SceneManager.LoadScene(szenenName, LoadSceneMode.Single);
         }
     }
